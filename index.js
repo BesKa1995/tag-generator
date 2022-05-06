@@ -9,8 +9,8 @@ function renderContent(renderInformation) {
 
 
 function validateElementType(element) {
-
-  const isNotObject = Object.prototype.toString.call(element).slice(8, -1) !== 'Object' ? true : false
+  const elementType = Object.prototype.toString.call(element).slice(8, -1)
+  const isNotObject = elementType !== 'Object' ? true : false
 
   if (isNotObject) {
     throw new Error('Invalid element.')
